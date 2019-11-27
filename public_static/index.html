@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="./public/styles/navbar.css">
+	<link rel="stylesheet" type="text/css" href="./public/styles/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>CPS530 Term Project</title>
+</head>
+<body>
+	<nav>
+		<div>
+			<ul class="nav-links" id="default">
+				<li><a href="./index.html" id="current-page">Page 1</a></li>
+				<li><a href="./page2.html">Page 2</a></li>
+				<li><a href="./page3.html">Page 3</a></li>
+				<li><a href="../map-app/build/index.html">Page 4</a></li>
+				<li><a href="./page5.html">Page 5</a></li>
+				<li><a href="./page6.html">Page 6</a></li>
+			</ul>
+		</div>
+		<div class="page-selector">
+			<button class="dropbtn"><p>Select Page <span id="arrow-drop">&#9654&#xFE0E;</span></p></button>
+			<div class="drop-content">
+				<div id="hidden" class="nav-links disabled">
+					<a href="./index.html" id="current-page">Page 1</a>
+					<a href="./page2.html">Page 2</a>
+					<a href="./page3.html">Page 3</a>
+					<a href="./page4.html">Page 4</a>
+					<a href="./page5.html">Page 5</a>
+					<a href="./page6.html">Page 6</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<center class="outer-div">
+		<div class="mid-div">
+			<div class="center-div">
+				<div class="tabs">
+					<button id="front" class="front-end tablink" onclick="openTab(event,'Front-end-content')">Front-end</button>
+					<button id="back" class="back-end tablink" onclick="openTab(event,'Back-end-content')">Back-end</button>
+					<div class="underline"></div>
+					<div id="bar" class="animation start-front"></div>
+				</div>
+				<div id="Front-end-content" class="tabcontent">
+					<center>
+						<div class="heading">
+							<div><img class="head" src="./public/images/reactFull.png" alt="React logo" width="261px" height="85px"></div>
+							<div><img class="head" src="./public/images/ratingReact.png" alt="React rating" width="261px" height="85px"></div>
+						</div>
+						<div class="data">
+							<p class="section-name">Popularity</p>
+							<p class="sub-data">In 2019, React is one of (if not the most) popular JavaScript frontend framework. According to StackOverflow's 2018 surveys, React ranks #3 in most popular. Per the stateofjs.com survey for 2018, React ranks highly on amount of users that have used it and would use it again: 64.8% used it and would use it again and only 6.7% of users would not use it again.</p>
+							<p class="section-name">Usage</p>
+							<p class="sub-data">React excels because it’s pure JavaScript. If you have a team of JavaScript developers that know the ins and outs of the language, then it’s a great fit. JavaScript developers will be able to embrace JS, build components with pure JavaScript and understand styling with CSS-in-JS.</p>
+						</div>
+						<br>
+						<div class="pros-cons-container">
+							<div class="pros-cons">
+								<p>Advantages</p>
+								<ul><li>Clean programming, strong community, fast performance</li></ul>
+							</div>
+							<div id="disadvantages" class="pros-cons">
+								<p>Disadvantages</p>
+								<ul><li>Large library, learning curve, view-orientedness</li></ul>
+							</div>
+						</div>
+					</center>
+				</div>
+				<div id="Back-end-content" class="tabcontent">
+					<center>
+						<div class="heading">
+							<div><img class="head" src="./public/images/mongoFull.png" alt="MongoDB logo" width="261px" height="85px"></div>
+							<div><img class="head" src="./public/images/ratingReact.png" alt="MongoDB rating" width="261px" height="85px"></div>
+						</div>
+						<div class="data">
+							<p class="section-name">Popularity</p>
+							<p class="sub-data">MongoDB is by far the most popular choice in NoSQL world as its distributed architecture allows for more scalability and its document data model provides good flexibility to developers, with over 15 million downloads and counting, MongoDB is empowering users to query, manipulate and find interesting insights from their data.</p>
+							<p class="section-name">Usage</p>
+							<p class="sub-data">MongoDB is a general purpose database that is used for a variety of use cases. The most common use cases for MongoDB include Single View, Internet of Things, Mobile, Real-Time Analytics, Personalization, Catalog, and Content Management.</p>
+						</div>
+						<br>
+						<div class="pros-cons-container">
+							<div class="pros-cons">
+								<p>Advantages</p>
+								<ul><li>Flexible database, sharding, high speed, scalability</li></ul>
+							</div>
+							<div id="disadvantages" class="pros-cons">
+								<p>Disadvantages</p>
+								<ul><li>Joins not supported, high memory usage, limited data size</li></ul>
+							</div>
+						</div>
+					</center>
+				</div>
+			</div>
+		</div>
+	</center>
+
+
+
+
+	<script src="./public/scripts/scripts.js"></script>
+	<script src="./public/scripts/queries.js"></script>
+</body>
+</html>

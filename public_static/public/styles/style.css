@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/*.        												FONTS USAGE													*/
+/*.											font-family: 'PT Sans', sans-serif;										*/
+/*.											font-family: 'Montserrat', sans-serif;									*/
+
+/*-- RESETTING SOME DEFAULT HTML --*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;    
+}
+
+/* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
+
+/*--INFO CONTAINER--*/
+.outer-div {
+	display: table;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+}
+.mid-div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.center-div {
+	margin: auto auto;
+}
+/*--END OF INFO CONTAINER--*/
+
+/*--TABS--*/
+.tabs {
+	width: 70vw;
+	height: 90px;
+	display: flex;
+	justify-content: space-around;
+	overflow: hidden;
+	position: relative;
+}
+
+.tabs button {
+	opacity: 0.5;
+	outline: none;
+}
+
+.underline {
+	position: absolute;
+	height: 5px;
+	width: 100%;
+	bottom: 0;
+	z-index: -1;
+	background: black;
+	opacity: 0.5;
+}
+
+.tablink {
+	border: none;
+	background-color: transparent;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: calc(30px + 1vw);
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.tabs button.active {
+	opacity: 1;
+}
+	/*-- ANIMATION OF CHOOSING THE TAB --*/
+.animation {
+	position: absolute;
+	height: 5px;
+	bottom: 0;
+	z-index: 0;
+	background: black;
+	transition: all 0.5s ease 0s;
+	opacity: 0;
+}
+
+.tabs:hover .animation {
+	opacity: 1;
+	transition: all 0.5s ease 0s;
+}
+
+.start-front,#front.tablink:hover~.animation {
+	width: 50%;
+	left: 0;
+}
+
+.start-back,#back.tablink:hover~.animation {
+	width: 50%;
+	left: 50%;
+}
+	/*-- END OF ANIMATION --*/
+
+	/*-- TAB INFO SECTION --*/
+
+	/*-- FADE FOR INFO SECTIONS--*/
+@-webkit-keyframes fadeEffect {
+	from {opacity: 0;}	
+	to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.tabcontent {
+	display: none;
+	padding: 10px;
+	-webkit-animation: fadeEffect 1s;
+	animation: fadeEffect 1s;
+	width: 70vw;
+}
+
+.heading {
+	display: inline-flex;
+}
+
+.heading div {
+	margin-top: 10px;
+	margin-right: 2vw;
+	margin-left: 2vw;
+}
+
+.data {
+	display: block;
+	height: auto;
+	overflow: hidden;
+}
+
+.section-name {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700; 
+	font-size: calc(10px + 1vw);
+	margin-top: 10px;
+	float: left;
+}
+
+.sub-data {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400; 
+	font-size: calc(5px + 1vw);
+	float: left;
+	text-align: left;
+}
+
+.pros-cons-container {
+	display: inline-flex;
+}
+
+.pros-cons {
+	width: 35vw;
+	display: block;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700; 
+	font-size: calc(10px + 1vw);
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.pros-cons ul {
+	display: flex;
+	justify-content: space-around;
+}
+.pros-cons li{
+	list-style-type: none;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400; 
+	font-size: calc(5px + 1vw);
+}
+	/*-- END OF TAB INFO SECTION --*/
+
+/*-- END OF TABS --*/
+
+
+
+
+/*MOBILE VERSION CHANGES*/
+@media screen and (max-width: 1024px) {
+	.tabs {
+		width: 80vw;
+	}
+	.tabcontent {
+		width: 80vw;
+	}
+
+	.head {
+		width: 208px;
+		height: 68px;
+	}
+
+	.section-name {
+		font-size: calc(15px + 1vw);
+	}
+
+	.sub-data {
+		font-size: calc(10px + 1vw);
+	}
+
+	.pros-cons {
+		font-size: calc(15px + 1vw);
+	}
+
+	.pros-cons li {
+		font-size: calc(10px + 1vw);
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.heading {
+		display: block;
+	}
+
+	.pros-cons-container {
+		display: block;
+	}
+
+	.pros-cons {
+		width: 80vw;
+	}
+
+	#disadvantages {
+		margin-top: 0.8em;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.tabs {
+		width: 95vw;
+	}
+
+	.tablink {
+		font-size: calc(24px + 1vw);
+	}
+	.tabcontent {
+		width: 95vw;
+	}
+}
+
+
