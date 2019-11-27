@@ -18,7 +18,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: auto auto;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 `;
 
 const App = () => {
