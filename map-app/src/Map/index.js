@@ -2,6 +2,7 @@ import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
+import servicePoints from "../services/points";
 
 const Wrapper = styled.div`
 	width: ${props => props.width};
@@ -9,13 +10,22 @@ const Wrapper = styled.div`
 `;
 
 export default class Map extends React.Component {
+
 	componentDidMount() {
+
+		const fetchData = async () => {
+			const points = await servicePoints.getAll();
+			console.log(points);
+		}
+
+		fetchData();
+
 		this.map = L.map('map', {
 			center: [43.657998, -79.378355],
 			zoom: 17,
 			zoomControl: false
 		});
-		
+
 		L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
 			detectRetina: true,
 			maxZoom: 20,
