@@ -5,7 +5,7 @@ import Map from './Map';
 const OuterWrapper = styled.div`
   display: table; 
   position: absolute;
-  height: 85%;
+  height: 80%;
   width: 100%;
 `;
 
