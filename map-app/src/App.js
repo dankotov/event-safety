@@ -18,7 +18,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: auto auto;
-  overflow-x:hidden;
 `;
 
 const App = () => {
