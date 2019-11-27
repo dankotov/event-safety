@@ -18,6 +18,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: auto auto;
+  padding: 40px;
 `;
 
 const App = () => {
