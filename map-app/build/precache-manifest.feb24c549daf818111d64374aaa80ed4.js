@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff993ed28e76f9170af8c653b7cfd31a",
+    "revision": "892148c74a922b0921d33b5d0ef01295",
     "url": "../map-app/build/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "../map-app/build/static/css/2.098bc035.chunk.css"
   },
   {
-    "revision": "893c87c99ce99b03dfa5",
+    "revision": "c57b271f5a606b0e2f8e",
     "url": "../map-app/build/static/css/main.34de6062.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "../map-app/build/static/js/2.faf8da15.chunk.js"
   },
   {
-    "revision": "893c87c99ce99b03dfa5",
-    "url": "../map-app/build/static/js/main.67de5638.chunk.js"
+    "revision": "c57b271f5a606b0e2f8e",
+    "url": "../map-app/build/static/js/main.ce25ce2a.chunk.js"
   },
   {
     "revision": "e96ba978c03ac43e569e",
