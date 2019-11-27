@@ -13,6 +13,89 @@
     box-sizing: border-box;    
 }
 
+/* .outer-div {
+	display: table;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+}
+.mid-div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.center-div {
+	margin: auto;
+} */
+
+.container-team{
+    margin-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.member {
+    position: relative;
+    display: table;
+    width: 225px;
+    background-color: #212121;
+    height: 350px;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.ivan{
+    background-image: linear-gradient(to bottom, rgba(54, 0, 51, 0.26),rgba(11, 135, 147, 0.52)),url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.daniyil{
+    background-image: linear-gradient(to bottom, rgba(54, 0, 51, 0.26),rgba(11, 135, 147, 0.52)),url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.noureldin{
+    background-image: linear-gradient(to bottom, rgba(54, 0, 51, 0.26),rgba(11, 135, 147, 0.52)),url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.saleh{
+    background-image: linear-gradient(to bottom, rgba(54, 0, 51, 0.26),rgba(11, 135, 147, 0.52)),url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.vladislav{
+    background-image: linear-gradient(to bottom, rgba(54, 0, 51, 0.26),rgba(11, 135, 147, 0.52)),url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.caption{
+   display: table-cell;
+   vertical-align: bottom;
+   padding-bottom: 30px;
+   padding-left: 15px;
+   color: bisque;
+   font-family: 'PT Sans', sans-serif;
+   font-weight: 700;
+}
+
+.caption h3 {
+    font-size: 20px;
+}
+.caption p {
+
+}
+
 /* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
 
 /* YOUR CODE STARTS HERE */

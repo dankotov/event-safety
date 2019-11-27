@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Map from './Map';
 
@@ -20,26 +20,17 @@ const Container = styled.div`
   margin: auto auto;
 `;
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
 
-    this.state = {
-      checked: false,
-    }
-
-  }
-
-  render() {
-    return (
-      <OuterWrapper>
-        <AppWrapper>
-          <Container>
-            <Map />
-          </Container>
-        </AppWrapper>
-      </OuterWrapper>
-    );
-  }
-
+  return (
+    <OuterWrapper>
+      <AppWrapper>
+        <Container>
+          <Map />
+        </Container>
+      </AppWrapper>
+    </OuterWrapper>
+  );
 }
+
+export default App;
