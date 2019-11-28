@@ -38,7 +38,7 @@ export default class Map extends React.Component {
 			fillOpacity: 0.5,
 			radius: 17,
 		}).addTo(this.map);
-		circleDanger.bindPopup("Agressive homeless man").openPopup();
+		circleDanger.bindPopup("Agressive homeless man");
 
 		var circleInterference = L.circle([43.659366, -79.379605], {
 			color: '#ff8c00',
