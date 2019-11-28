@@ -40,6 +40,8 @@ export default class App extends React.Component {
       const pointsFetched = await servicePoints.getAll();
       // this.setState({points: pointsFetched})
       return pointsFetched;
+
+      
       console.log(this.state.points);
     }
     this.setState({points: fetchData()});
