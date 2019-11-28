@@ -2,7 +2,6 @@ import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
-import servicePoints from "../services/points";
 
 const Wrapper = styled.div`
 	width: ${props => props.width};
@@ -12,13 +11,6 @@ const Wrapper = styled.div`
 export default class Map extends React.Component {
 
 	componentDidMount() {
-
-		const fetchData = async () => {
-			const points = await servicePoints.getAll();
-			console.log(points);
-		}
-
-		fetchData();
 
 		this.map = L.map('map', {
 			center: [43.657998, -79.378355],
@@ -55,7 +47,17 @@ export default class Map extends React.Component {
 			radius: 17,
 		}).addTo(this.map);
 		circleFun.bindPopup("Nice guitarist performing");
-		
+
+		console.log("points in map", this.props.points)
+
+		/*var circleTest = L.circle([this.props.points[0].latitude, this.props.points[0].longitude], {
+			color: 'red',
+			fillColor: '#f03',
+			fillOpacity: 0.5,
+			radius: 19,
+		}).addTo(this.map);
+		circleTest.bindPopup("Agressive homeless man");*/
+
 	}
 
 	render() {

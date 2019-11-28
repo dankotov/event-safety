@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Map from './Map';
+import servicePoints from "./services/points";
+
 
 const OuterWrapper = styled.div`
   display: table; 
@@ -22,17 +24,39 @@ const Container = styled.div`
   padding-bottom: 40px;
 `;
 
-const App = () => {
+export default class App extends React.Component {
 
-  return (
-    <OuterWrapper>
-      <AppWrapper>
-        <Container>
-          <Map />
-        </Container>
-      </AppWrapper>
-    </OuterWrapper>
-  );
+  constructor(props) {
+
+    super(props);
+    this.state = {
+      checked: false,
+      points: [],
+    }
+  }
+
+  componentDidMount() {
+    const fetchData = async () => {
+      const pointsFetched = await servicePoints.getAll();
+      // this.setState({points: pointsFetched})
+      return pointsFetched;
+      console.log(this.state.points);
+    }
+    this.setState({points: fetchData()});
+    // fetchData();
+    console.log(this.state.points)
+  }
+
+  render() { 
+    return (
+      <OuterWrapper>
+        <AppWrapper>
+          <Container>
+            <Map points={this.state.points} />
+          </Container>
+        </AppWrapper>
+      </OuterWrapper>
+    );
+  }
 }
 
-export default App;
