@@ -13,6 +13,75 @@
     box-sizing: border-box;    
 }
 
+h1, h2, h3, h4, h5, h6, p{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.wrapper{
+    max-width: 1024px; 
+    padding-left: 300px;
+    margin-bottom: 50px;
+    /* padding-right: 100px; */
+}
+
+.section-title{
+	font-weight: 700; 
+	font-size: calc(32px + 1vw);
+    margin: 2rem 0;
+}
+
+
+pre{
+    margin: 2rem 0;
+    background: #33332d;
+    color: white;
+    word-wrap: normal;
+    overflow: auto;
+    padding: 1.45rem;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    text-align: left;
+    tab-size: 0;
+}
+
+code{
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 0;
+}
+
+em{
+    padding: 1px 5px 2px;
+    background: hsla(0,0%,88.2%,.6);
+    font-style: normal;
+    font-family: Courier;
+}
+
+@media screen and (max-width: 1024px){
+    .wrapper{
+        max-width: 800px;
+        padding-left: 350px;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .wrapper{
+        max-width: 500px;
+        padding-left: 150px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .wrapper{
+        max-width: 350px;
+        padding-left: 75px;
+    }
+}
+
+
 /* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
 
 /* YOUR CODE STARTS HERE */
