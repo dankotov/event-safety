@@ -3,6 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import servicePoints from '../services/points';
 import styled from 'styled-components';
+import './index.css';
 
 const Wrapper = styled.div`
 	width: ${props => props.width};
@@ -115,6 +116,7 @@ const Map = ({ points }) => {
 		<>
 			<div style={{ display: "block", width: "100%" }}>
 				<Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" />
+				<h2>See something - say something</h2>
 				{
 					latlng.length > 0 && type && description ?
 						<>
@@ -123,18 +125,19 @@ const Map = ({ points }) => {
 						<p>Please {latlng.length === 0 ? "pin a point on the map" : ""} {type ? "" : ", select the type of an event"} {description ? "" : ", provide a short description"}</p>
 
 				}
-				<form onSubmit={handleFormSubmission}>
-					<select onChange={(e) => handleTypeChange(e)}>
-						<option value="">Select type</option>
-						<option value="danger">Danger</option>
-						<option value="interference">Interference</option>
-						<option value="event">Event</option>
-					</select>
-					<br />
-					<input type="text" placeholder="short description" onChange={(e) => handleDescriptionChange(e)} /> <br />
-					<button disabled={!type || latlng.length == 0 || !description} type="submit">submit</button>
-				</form>
-
+				<div className="formContainer">
+					<form className="myForm" onSubmit={handleFormSubmission}>
+						<select onChange={(e) => handleTypeChange(e)}>
+							<option value="">Select type</option>
+							<option value="danger">Danger</option>
+							<option value="interference">Interference</option>
+							<option value="event">Event</option>
+						</select>
+						<br />
+						<input className="inText" type="text" placeholder="short description" onChange={(e) => handleDescriptionChange(e)} /> <br />
+						<button disabled={!type || latlng.length == 0 || !description} type="submit">submit</button>
+					</form>
+				</div>
 			</div>
 		</>
 	)
