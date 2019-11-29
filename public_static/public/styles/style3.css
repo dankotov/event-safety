@@ -49,7 +49,7 @@ pre{
     word-wrap: normal;
     overflow: auto;
     padding: 1.45rem;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 1.2rem;
     text-align: left;
     tab-size: 0;
@@ -72,25 +72,25 @@ em{
 
 @media screen and (max-width: 1024px){
     .center-div {
-        max-width: 590px;
+        max-width: 560px;
     }
 }
 
 @media screen and (max-width: 620px){
     .center-div {
-        max-width: 490px;
+        max-width: 460px;
     }
 }
 
 @media screen and (max-width: 500px){
     .center-div {
-        max-width: 350px;
+        max-width: 320px;
     }
 }
 
 @media screen and (max-width: 350px){
     .center-div {
-        max-width: 300px;
+        max-width: 270px;
     }
 }
 
