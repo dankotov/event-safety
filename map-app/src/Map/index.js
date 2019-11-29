@@ -16,6 +16,13 @@ const Map = ({ points }) => {
 
 	useEffect(() => {
 
+		delete L.Icon.Default.prototype._getIconUrl;
+		L.Icon.Default.mergeOptions({
+		  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+		  iconUrl: require("leaflet/dist/images/marker-icon.png"),
+		  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+		});
+
 		mapRef.current = L.map('map', {
 			center: [43.657998, -79.378355],
 			zoom: 17,
@@ -27,6 +34,12 @@ const Map = ({ points }) => {
 			maxZoom: 20,
 			maxNativeZoom: 17,
 		}).addTo(mapRef.current);
+
+		var marker = L.marker();
+		function onMapClick(e) {
+		    marker.setLatLng(e.latlng).addTo(mapRef.current);
+		}
+		mapRef.current.on('click', onMapClick);
 
 
 	}, [])
@@ -65,6 +78,8 @@ const Map = ({ points }) => {
 			}
 		})
 	}, [])
+
+
 
 	return (
 		<>
