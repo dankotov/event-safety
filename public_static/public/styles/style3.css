@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6, p{
     text-align: left;
     padding-left: 15px;
     padding-right: 15px; 
+    margin-bottom: 50px;
 }
 
 .section-title{
@@ -68,6 +69,32 @@ em{
     background: hsla(0,0%,88.2%,.6);
     font-style: normal;
     font-family: Courier;
+}
+
+p a{
+    border: 0;
+    color: black;
+    background-color: transparent;
+    border-style:solid;
+    border-bottom-width: 2px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.orange-link{
+    border-color: rgb(238,172,93);
+}
+
+.blue-link{
+    border-color: rgb(130,210,247);
+}
+
+.orange-link:hover{
+    background: rgb(238,172,93);
+}
+
+.blue-link:hover{
+    background: rgb(130,210,247);
 }
 
 @media screen and (max-width: 1024px){
