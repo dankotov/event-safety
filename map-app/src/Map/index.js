@@ -115,7 +115,7 @@ const Map = ({ points }) => {
 	return (
 		<>
 			<div style={{ display: "block", width: "100%" }}>
-				<Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" />
+				<Wrapper style={{ display: "block" }} width="100%" height="450px" id="map" />
 				<h2>See something - say something</h2>
 				{
 					latlng.length > 0 && type && description ?
@@ -126,16 +126,21 @@ const Map = ({ points }) => {
 
 				}
 				<div className="formContainer">
-					<form className="myForm" onSubmit={handleFormSubmission}>
-						<select onChange={(e) => handleTypeChange(e)}>
-							<option value="">Select type</option>
-							<option value="danger">Danger</option>
-							<option value="interference">Interference</option>
-							<option value="event">Event</option>
-						</select>
-						<br />
-						<input className="inText" type="text" placeholder="short description" onChange={(e) => handleDescriptionChange(e)} /> <br />
-						<button disabled={!type || latlng.length == 0 || !description} type="submit">submit</button>
+					<form className="formElem myForm" onSubmit={handleFormSubmission}>
+						<div className="selectContainer formElem">
+							<select className="selector" onChange={(e) => handleTypeChange(e)}>
+								<option value="">Select type</option>
+								<option value="danger">Danger</option>
+								<option value="interference">Interference</option>
+								<option value="event">Event</option>
+							</select>
+						</div>
+						<div className="inputContainer formElem">
+							<input className="inText" type="text" placeholder="Short description" onChange={(e) => handleDescriptionChange(e)} />
+						</div>
+						<div className="buttonContainer formElem">
+							<button disabled={!type || latlng.length === 0 || !description} type="submit">submit</button>
+						</div>
 					</form>
 				</div>
 			</div>

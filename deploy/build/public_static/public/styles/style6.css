@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/*.        												FONTS USAGE								*/
+/*.											font-family: 'PT Sans', sans-serif;					*/
+/*.											font-family: 'Montserrat', sans-serif;				*/
+
+/*-- RESETTING SOME DEFAULT HTML --*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;    
+}
+
+/* .outer-div {
+	display: table;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+}
+.mid-div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.center-div {
+	margin: auto;
+} */
+
+.container-team{
+    margin-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.member {
+    position: relative;
+    display: table;
+    width: 225px;
+    background-color: #212121;
+    height: 350px;
+    border-radius: 35px;
+    cursor: pointer;
+    z-index: 100;
+}
+.member:before {
+    background-image: linear-gradient(to bottom, rgba(15, 32, 39, 0.58),rgba(44, 83, 100, 0.71));
+    display: block;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity 0.5s ease 0s;
+    border-radius: 35px;
+    cursor: pointer;
+    background-size: cover;
+    background-position-x: -50px;
+}
+.member:hover:before {
+    opacity: 1;
+}
+
+.work {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    padding-top: 30px;
+    opacity: 0;
+    font-size: 20px;
+    font-family: 'PT Sans', sans-serif;
+    color: bisque;
+}
+.work:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease 0s;
+}
+
+.ivan {
+    background-image: url(../images/Ivan.jpg);
+    background-size: cover;
+    background-position-x: -80px;
+    background-repeat: no-repeat;
+}
+
+.daniyil{
+    background-image: url(../images/Daniyil.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.noureldin{
+    background-image: url(../images/Noureldin.jpg);
+    background-size: cover;
+    background-position-x: -50px;
+}
+
+.saleh{
+    background-image: url(../images/Saleh.jpg);
+    background-size: cover;
+    background-position-x: -20px;
+}
+
+.vladislav{
+    background-image: url(../images/Vladislav.jpg);
+    background-size: cover;
+    background-position-x: -20px;
+}
+
+.caption{
+   display: table-cell;
+   vertical-align: bottom;
+   padding-bottom: 30px;
+   padding-left: 15px;
+   color: #fff2e3;
+   font-family: 'PT Sans', sans-serif;
+   font-weight: 700;
+}
+
+.caption h3 {
+    font-size: 25px;
+}
+.caption p {
+
+}
+
+/* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
+
+/* YOUR CODE STARTS HERE */

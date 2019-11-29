@@ -29,19 +29,45 @@ h2:before, h2:after {
     display: flex;
 }
 
+.formElem {
+    margin: 0px 10px;
+}
+
 .myForm {
     margin: 0 auto;
     display: flex;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+select:focus {
+    outline-color: #df2351;
+}
+.selector {
+    display: block;
+    width: 150px;
+    height: 30px;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    background: #F0F0F0;
+    margin: auto;
 }
 
 .inText {
+    width: 400px;
+    height: 80px;
     font-size: 1em;
-    line-height: 60px;
-    color: white;
-    background: #222222;
+    color: #808080;
+    background: #F0F0F0;
     padding-top: 5px;
     padding-left: 10px;
+    border: none;
+    border-radius: 2.5px;
+    margin: auto;
+}
+input:focus {
+    outline-color: #df2351;
 }
 
 button {
@@ -49,5 +75,42 @@ button {
     background: -webkit-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
     background: -o-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
     background: -moz-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
-    background: linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
+    background: linear-gradient(-135deg, #d5007d, #d5007d, #e53935);
+    border-radius: 2.5px;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    margin: auto;
+}
+
+button:disabled {
+    filter: grayscale(80%);
+    transition: 1s;
+    cursor: default;
+}
+
+button:focus {
+    outline-color: #df2351;
+}
+
+@media screen and (max-width: 768px) {
+    .myForm {
+        display: block;
+    }
+    .selectorContainer, .inputContainer, .buttonContainer {
+        margin: 15px auto;   
+    }
+    .buttonContainer {
+        display: flex;
+        justify-content: center;    
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .inText {
+        width: 290px;
+    }
 }

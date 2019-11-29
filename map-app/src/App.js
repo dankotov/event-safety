@@ -40,11 +40,11 @@ const App = () => {
   }, [])
   console.log('Points from db', pointsArray);
 
-  /*if(loading){
+  if(loading){
     return(
       <p>loading...</p>
     )
-  }*/
+  }
 
   return (
     <>

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/*.        												FONTS USAGE								*/
+/*.											font-family: 'PT Sans', sans-serif;					*/
+/*.											font-family: 'Montserrat', sans-serif;				*/
+
+/*-- RESETTING SOME DEFAULT HTML --*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;    
+}
+
+/* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
+
+/* YOUR CODE STARTS HERE */

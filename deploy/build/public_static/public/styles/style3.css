@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/*.        												FONTS USAGE								*/
+/*.											font-family: 'PT Sans', sans-serif;					*/
+/*.											font-family: 'Montserrat', sans-serif;				*/
+
+/*-- RESETTING SOME DEFAULT HTML --*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;    
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.outer-div {
+    display: table;
+    position: absolute;
+    height: 80%;
+    width: 100%;
+}
+.mid-div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.center-div {
+    margin: auto auto;
+    max-width: 750px;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px; 
+    margin-bottom: 50px;
+}
+
+.section-title{
+	font-weight: 700; 
+	font-size: calc(32px + 1vw);
+    margin: 2rem 0;
+}
+
+pre{
+    margin: 2rem 0;
+    background: #33332d;
+    color: white;
+    word-wrap: normal;
+    overflow: auto;
+    padding: 1.45rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+    tab-size: 0;
+    line-height: 20px;
+
+}
+
+code{
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 0;
+}
+
+em{
+    padding: 1px 5px 2px;
+    background: hsla(0,0%,88.2%,.6);
+    font-style: normal;
+    font-family: Courier;
+}
+
+p a{
+    border: 0;
+    color: black;
+    background-color: transparent;
+    border-style:solid;
+    border-bottom-width: 2px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.orange-link{
+    border-color: rgb(238,172,93);
+}
+
+.blue-link{
+    border-color: rgb(130,210,247);
+}
+
+.orange-link:hover{
+    background: rgb(238,172,93);
+}
+
+.blue-link:hover{
+    background: rgb(130,210,247);
+}
+
+@media screen and (max-width: 1024px){
+    .center-div {
+        max-width: 560px;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .center-div {
+        max-width: 460px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .center-div {
+        max-width: 320px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .center-div {
+        max-width: 270px;
+    }
+}
+
+
+/* END OF SIMILAR AT EVERY PAGE (TO BE MERGED) */
+
+/* YOUR CODE STARTS HERE */

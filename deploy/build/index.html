@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="./public_static/public/styles/navbar.css">
+	<link rel="stylesheet" type="text/css" href="./public_static/public/styles/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>CPS530 Term Project</title>
+</head>
+
+<body>
+	<nav>
+		<div>
+			<ul class="nav-links" id="default">
+				<li><a href="./public_static/index.html" id="current-page">Home</a></li>
+				<li><a href="./public_static/page2.html">Installation</a></li>
+				<li><a href="./public_static/page3.html">Tutorial</a></li>
+				<li><a href="./public_static/page4.html">Demo</a></li>
+				<li><a href="./public_static/page5.html">Summary</a></li>
+				<li><a href="./public_static/page6.html">References</a></li>
+			</ul>
+		</div>
+		<div class="page-selector">
+			<button class="dropbtn">
+				<p>Select Page <span id="arrow-drop">&#9654&#xFE0E;</span></p>
+			</button>
+			<div class="drop-content">
+				<div id="hidden" class="nav-links disabled">
+					<a href="./public_static/index.html" id="current-page">Home</a>
+					<a href="./public_static/page2.html">Installation</a>
+					<a href="./public_static/page3.html">Tutorial</a>
+					<a href="./public_static/page4.html">Demo</a>
+					<a href="./public_static/page5.html">Summary</a>
+					<a href="./public_static/page6.html">References</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<center class="outer-div">
+		<div class="mid-div">
+			<div class="center-div">
+				<div class="tabs">
+					<button id="front" class="front-end tablink"
+						onclick="openTab(event,'Front-end-content')">Front-end</button>
+					<button id="back" class="back-end tablink"
+						onclick="openTab(event,'Back-end-content')">Back-end</button>
+					<div class="underline"></div>
+					<div id="bar" class="animation start-front"></div>
+				</div>
+				<div id="Front-end-content" class="tabcontent">
+					<center>
+						<div class="heading">
+							<div><img class="head" src="./public_static/public/images/reactFull.png" alt="React logo" width="261px"
+									height="85px"></div>
+							<div><img class="head" src="./public_static/public/images/rating.png" alt="React rating"
+									width="261px" height="85px"></div>
+						</div>
+						<div class="data">
+							<p class="section-name">Popularity</p>
+							<p class="sub-data">In 2019, React is one of (if not the most) popular JavaScript frontend
+								framework. According to StackOverflow's 2018 surveys, React ranks #3 in most popular.
+								Per the stateofjs.com survey for 2018, React ranks highly on amount of users that have
+								used it and would use it again: 64.8% used it and would use it again and only 6.7% of
+								users would not use it again.</p>
+							<p class="section-name">Usage</p>
+							<p class="sub-data">React excels because it’s pure JavaScript. If you have a team of
+								JavaScript developers that know the ins and outs of the language, then it’s a great fit.
+								JavaScript developers will be able to embrace JS, build components with pure JavaScript
+								and understand styling with CSS-in-JS.</p>
+						</div>
+						<br>
+						<div class="pros-cons-container">
+							<div class="pros-cons">
+								<p>Advantages</p>
+								<ul>
+									<li>Clean programming, strong community, fast performance</li>
+								</ul>
+							</div>
+							<div id="disadvantages" class="pros-cons">
+								<p>Disadvantages</p>
+								<ul>
+									<li>Large library, learning curve, view-orientedness</li>
+								</ul>
+							</div>
+						</div>
+					</center>
+				</div>
+				<div id="Back-end-content" class="tabcontent">
+					<center>
+						<div class="heading">
+							<div><img class="head" src="./public_static/public/images/expressFull.png" alt="Express logo" width="261px"
+									height="85px"></div>
+							<div><img class="head" src="./public_static/public/images/rating.png" alt="Express rating"
+									width="261px" height="85px"></div>
+						</div>
+						<div class="data">
+							<p class="section-name">Popularity</p>
+							<p class="sub-data">Express.js is the most popular node framework as evidenced by its
+								attainment of 43,000 GitHub stars. This is due to the framework’s unopinionated, fast,
+								and minimalist design philosophy. Express has become so popular to the extent that it is
+								synonymous with Node.js. Express is also used by Uber, IBM, and PayPal.</p>
+							<p class="section-name">Usage</p>
+							<p class="sub-data">Express functions as a middleware framework that sets up routes to
+								receive and send requests between the front-end and the database of a web application. A
+								chat-based application is the most common use case for Node and Express because chat
+								applications are high traffic, data-intensive, and lightweight.</p>
+						</div>
+						<br>
+						<div class="pros-cons-container">
+							<div class="pros-cons">
+								<p>Advantages</p>
+								<ul>
+									<li>The standard framework for Node.js web middleware, fully customisable, open
+										source</li>
+								</ul>
+							</div>
+							<div id="disadvantages" class="pros-cons">
+								<p>Disadvantages</p>
+								<ul>
+									<li>Single threaded framework, relies on the asynchronous programming model, weak library support system
+									</li>
+								</ul>
+							</div>
+						</div>
+					</center>
+				</div>
+			</div>
+		</div>
+	</center>
+
+
+
+
+	<script src="./public_static/public/scripts/scripts.js"></script>
+	<script src="./public_static/public/scripts/queries.js"></script>
+</body>
+
+</html>
