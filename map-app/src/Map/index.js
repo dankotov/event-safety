@@ -90,7 +90,6 @@ const Map = ({ points }) => {
 
 
 	const handleTypeChange = (e) => {
-		console.log(e.target.value)
 		setType(e.target.value);
 	}
 
@@ -99,9 +98,7 @@ const Map = ({ points }) => {
 	}
 
 	const handleFormSubmission = async (e) => {
-		// e.preventDefault();
 		try {
-			// console.log('lat lng', latlng);
 			const newPoint = await servicePoints.submitPoint({ "type": type, "content": description, "latitude": latlng[0], "longitude": latlng[1] });
 			points.concat(newPoint);
 		}
@@ -110,16 +107,32 @@ const Map = ({ points }) => {
 		}
 		setDescription("");
 		setType("");
+		setLatLng([]);
 	}
+
 
 	return (
 		<>
 			<div style={{ display: "block", width: "100%" }}>
 				<Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" />
+				{
+					latlng.length > 0 && type && description ?
+						<>
+							<p style={{ opacity: 0 }}>Please</p>
+						</> :
+						<p>Please {latlng.length === 0 ? "pin a point on the map" : ""} {type ? "" : ", select the type of an event"} {description ? "" : ", provide a short description"}</p>
+
+				}
 				<form onSubmit={handleFormSubmission}>
-					<input type="text" onChange={(e) => handleTypeChange(e)} /> <br />
-					<input type="text" onChange={(e) => handleDescriptionChange(e)} /> <br />
-					<button type="submit">submit</button>
+					<select onChange={(e) => handleTypeChange(e)}>
+						<option value="">Select type</option>
+						<option value="danger">Danger</option>
+						<option value="interference">Interference</option>
+						<option value="event">Event</option>
+					</select>
+					<br />
+					<input type="text" placeholder="short description" onChange={(e) => handleDescriptionChange(e)} /> <br />
+					<button disabled={!type || latlng.length == 0 || !description} type="submit">submit</button>
 				</form>
 
 			</div>
