@@ -45,7 +45,9 @@ const Map = ({ points }) => {
 		function onMapClick(e) {
 			marker.setLatLng(e.latlng).addTo(mapRef.current);
 			console.log(marker.getLatLng());
-			setLatLng(marker.getLatLng());
+			const latlng = marker.getLatLng();
+			setLatLng([latlng.lat, latlng.lng]);
+			console.log("state", latlng);
 		}
 		mapRef.current.on('click', onMapClick);
 
@@ -88,6 +90,7 @@ const Map = ({ points }) => {
 
 
 	const handleTypeChange = (e) => {
+		console.log(e.target.value)
 		setType(e.target.value);
 	}
 
@@ -95,15 +98,18 @@ const Map = ({ points }) => {
 		setDescription(e.target.value);
 	}
 
-
 	const handleFormSubmission = async (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		try{
-			// const newPoint = servicePoints.submitPoint({});
+			// console.log('lat lng', latlng);
+			const newPoint = await servicePoints.submitPoint({"type": type, "content": description, "latitude": latlng[0], "longitude": latlng[1]});
+			points.concat(newPoint);
 		}
-		catch{
-			
+		catch(ex){
+			console.log('error', ex);
 		}
+		setDescription("");
+		setType("");
 	}
 
 	return (
