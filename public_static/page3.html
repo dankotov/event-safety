@@ -57,43 +57,67 @@
 							writing code for our map component:</p>
 						<pre>
 							<code>
-								import React from 'react';
-								import L from 'leaflet';
-								import 'leaflet/dist/leaflet.css';
-								
-								const Wrapper = styled.div`
-								  width: ${props => props.width};
-								  height: ${props => props.height};
-								`;
-								
-								export default class Map extends React.Component {
-								
-								  componentDidMount() {
-								
-									this.map = L.map('map', {
-									  center: [43.657998, -79.378355],
-									  zoom: 17,
-									  zoomControl: false
-									});
-								
-									L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
-									  detectRetina: true,
-									  maxZoom: 20,
-									  maxNativeZoom: 17,
-									}).addTo(this.map);
-								  }
-								
-								  render() {
-									return &lt;Wrapper width="100%" height="600px" id="map" /&gt;
-								  }
-								}
+									
+									const Map = ({ points }) => {
+									
+										const [latlng, setLatLng] = useState([]);
+									
+										const mapRef = useRef(null);
+									
+										//Creation of map
+									
+										useEffect(() => {
+											mapRef.current = L.map('map', {
+												center: [43.657998, -79.378355],
+												zoom: 17,
+												zoomControl: false
+											});
+									
+											L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+												detectRetina: true,
+												maxZoom: 20,
+												maxNativeZoom: 17,
+											}).addTo(mapRef.current);
+									
+											const marker = L.marker();
+											function onMapClick(e) {
+												marker.setLatLng(e.latlng).addTo(mapRef.current);
+												const latlng = marker.getLatLng();
+												setLatLng([latlng.lat, latlng.lng]);
+											}
+											mapRef.current.on('click', onMapClick);
+									
+										}, [])
+									
+										return (
+											
+													&lt;Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" /&gt;	
+											
+										)
+									
+									}
+									
+									export default Map;
 							</code>
 						</pre>
-						<p>First, we import libraries, such as React and Leafmap into the file. Then, we apply CSS stylings for
-							height and width of a map. We now moving to creating a component Map that generated a new map.
-							<em>ComponentDidMount()</em> will generate a new map once Map component is loaded. By default, center
+						<p>First, we create a component Map that generated a new map.
+							<em>useEffect() Hook</em> will generate a new map once Map component is loaded. By default, center
 							point is at
-							<em>[43.657998, -79.378355]</em>, and some other properies for zooming are applied to the map.</p>
+							<em>[43.657998, -79.378355]</em> that describes the Ryerson area. Some other properies for zooming are applied to the map too.</p> <br>
+
+						<p>The last thing our program does is defining an event handler for user mouse clicks on the map:</p>
+						<pre>
+							<code>
+									const marker = L.marker();
+											function onMapClick(e) {
+												marker.setLatLng(e.latlng).addTo(mapRef.current);
+												const latlng = marker.getLatLng();
+												setLatLng([latlng.lat, latlng.lng]);
+											}
+											mapRef.current.on('click', onMapClick);
+							</code>
+						</pre>
+						<p>Full source code for front-end is ava</p>
 					</section>
 					<section class="section-info">
 						<h1 class="section-title">Backend tutorial</h1>

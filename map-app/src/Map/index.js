@@ -100,12 +100,12 @@ const Map = ({ points }) => {
 
 	const handleFormSubmission = async (e) => {
 		// e.preventDefault();
-		try{
+		try {
 			// console.log('lat lng', latlng);
-			const newPoint = await servicePoints.submitPoint({"type": type, "content": description, "latitude": latlng[0], "longitude": latlng[1]});
+			const newPoint = await servicePoints.submitPoint({ "type": type, "content": description, "latitude": latlng[0], "longitude": latlng[1] });
 			points.concat(newPoint);
 		}
-		catch(ex){
+		catch (ex) {
 			console.log('error', ex);
 		}
 		setDescription("");
@@ -117,8 +117,8 @@ const Map = ({ points }) => {
 			<div style={{ display: "block", width: "100%" }}>
 				<Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" />
 				<form onSubmit={handleFormSubmission}>
-					<input type="text" onChange={(e) => handleTypeChange(e)}/> <br />
-					<input type="text" onChange={(e) => handleDescriptionChange(e)}/> <br />
+					<input type="text" onChange={(e) => handleTypeChange(e)} /> <br />
+					<input type="text" onChange={(e) => handleDescriptionChange(e)} /> <br />
 					<button type="submit">submit</button>
 				</form>
 
