@@ -47,6 +47,7 @@ const App = () => {
   }
 
   return (
+    <>
     <OuterWrapper>
       <AppWrapper>
         <Container>
@@ -54,6 +55,7 @@ const App = () => {
         </Container>
       </AppWrapper>
     </OuterWrapper>
+    </>
   );
 }
 

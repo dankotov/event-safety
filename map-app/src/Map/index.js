@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import servicePoints from '../services/points';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -10,17 +11,22 @@ const Wrapper = styled.div`
 
 const Map = ({ points }) => {
 
+	const [latlng, setLatLng] = useState([]);
+	const [type, setType] = useState("");
+	const [description, setDescription] = useState("");
+
+
 	const mapRef = useRef(null);
 
-//Creation of map
+	//Creation of map
 
 	useEffect(() => {
 
 		delete L.Icon.Default.prototype._getIconUrl;
 		L.Icon.Default.mergeOptions({
-		  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-		  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-		  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+			iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+			iconUrl: require("leaflet/dist/images/marker-icon.png"),
+			shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 		});
 
 		mapRef.current = L.map('map', {
@@ -35,17 +41,18 @@ const Map = ({ points }) => {
 			maxNativeZoom: 17,
 		}).addTo(mapRef.current);
 
-		var marker = L.marker();
+		const marker = L.marker();
 		function onMapClick(e) {
-		    marker.setLatLng(e.latlng).addTo(mapRef.current);
+			marker.setLatLng(e.latlng).addTo(mapRef.current);
+			console.log(marker.getLatLng());
+			setLatLng(marker.getLatLng());
 		}
 		mapRef.current.on('click', onMapClick);
 
 
 	}, [])
 
-
-//Put points on map
+	//Put points on map
 
 	useEffect(() => {
 		points.map(point => {
@@ -80,10 +87,36 @@ const Map = ({ points }) => {
 	}, [])
 
 
+	const handleTypeChange = (e) => {
+		setType(e.target.value);
+	}
+
+	const handleDescriptionChange = (e) => {
+		setDescription(e.target.value);
+	}
+
+
+	const handleFormSubmission = async (e) => {
+		e.preventDefault();
+		try{
+			// const newPoint = servicePoints.submitPoint({});
+		}
+		catch{
+			
+		}
+	}
 
 	return (
 		<>
-			<Wrapper width="100%" height="600px" id="map" />
+			<div style={{ display: "block", width: "100%" }}>
+				<Wrapper style={{ display: "block" }} width="100%" height="600px" id="map" />
+				<form onSubmit={handleFormSubmission}>
+					<input type="text" onChange={(e) => handleTypeChange(e)}/> <br />
+					<input type="text" onChange={(e) => handleDescriptionChange(e)}/> <br />
+					<button type="submit">submit</button>
+				</form>
+
+			</div>
 		</>
 	)
 

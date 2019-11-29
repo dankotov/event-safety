@@ -12,4 +12,9 @@ const getById = async (id) => {
     return point.data;
 }
 
-export default {getAll, getById};
+const submitPoint = async (newPoint) => {
+    const response = await axios.post(baseUrl, newPoint);
+    return response.data;
+}
+
+export default {getAll, getById, submitPoint};
