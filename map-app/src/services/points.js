@@ -7,4 +7,9 @@ const getAll = async () => {
     return points.data;
 }
 
-export default {getAll};
+const getById = async (id) => {
+    const point = await axios.get(`${baseUrl}/${id}`);
+    return point.data;
+}
+
+export default {getAll, getById};

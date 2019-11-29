@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
@@ -8,11 +8,15 @@ const Wrapper = styled.div`
 	height: ${props => props.height};
 `;
 
-export default class Map extends React.Component {
+const Map = ({ points }) => {
 
-	componentDidMount() {
+	const mapRef = useRef(null);
 
-		this.map = L.map('map', {
+//Creation of map
+
+	useEffect(() => {
+
+		mapRef.current = L.map('map', {
 			center: [43.657998, -79.378355],
 			zoom: 17,
 			zoomControl: false
@@ -22,45 +26,52 @@ export default class Map extends React.Component {
 			detectRetina: true,
 			maxZoom: 20,
 			maxNativeZoom: 17,
-		}).addTo(this.map);
+		}).addTo(mapRef.current);
 
-		var circleDanger = L.circle([43.657998, -79.378355], {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5,
-			radius: 17,
-		}).addTo(this.map);
-		circleDanger.bindPopup("Agressive homeless man");
 
-		var circleInterference = L.circle([43.659366, -79.379605], {
-			color: '#ff8c00',
-			fillColor: '#ffa500',
-			fillOpacity: 0.5,
-			radius: 17,
-		}).addTo(this.map);
-		circleInterference.bindPopup("Some construction on");
+	}, [])
 
-		var circleFun = L.circle([43.656122, -79.380933], {
-			color: 'green',
-			fillColor: '#90ee90',
-			fillOpacity: 0.5,
-			radius: 17,
-		}).addTo(this.map);
-		circleFun.bindPopup("Nice guitarist performing");
 
-		console.log("points in map", this.props.points)
+//Put points on map
 
-		/*var circleTest = L.circle([this.props.points[0].latitude, this.props.points[0].longitude], {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5,
-			radius: 19,
-		}).addTo(this.map);
-		circleTest.bindPopup("Agressive homeless man");*/
+	useEffect(() => {
+		points.map(point => {
+			if (point.type === "danger") {
+				const circle = L.circle([point.latitude, point.longitude], {
+					color: 'red',
+					fillColor: '#f03',
+					fillOpacity: 0.5,
+					radius: 17,
+				}).addTo(mapRef.current);
+				circle.bindPopup(point.content);
+			}
+			else if (point.type === "interference") {
+				const circle = L.circle([point.latitude, point.longitude], {
+					color: '#ff8c00',
+					fillColor: '#ffa500',
+					fillOpacity: 0.5,
+					radius: 17,
+				}).addTo(mapRef.current);
+				circle.bindPopup(point.content);
+			}
+			else {
+				const circle = L.circle([point.latitude, point.longitude], {
+					color: 'green',
+					fillColor: '#90ee90',
+					fillOpacity: 0.5,
+					radius: 17,
+				}).addTo(mapRef.current);
+				circle.bindPopup(point.content);
+			}
+		})
+	}, [])
 
-	}
+	return (
+		<>
+			<Wrapper width="100%" height="600px" id="map" />
+		</>
+	)
 
-	render() {
-		return <Wrapper width="100%" height="600px" id="map" />
-	}
 }
+
+export default Map;

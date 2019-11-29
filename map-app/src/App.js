@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Map from './Map';
 import servicePoints from "./services/points";
@@ -24,41 +24,38 @@ const Container = styled.div`
   padding-bottom: 40px;
 `;
 
-export default class App extends React.Component {
+const App = () => {
 
-  constructor(props) {
+  const [pointsArray, setPointsArray] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    super(props);
-    this.state = {
-      checked: false,
-      points: [],
+  useEffect(() => {
+    async function fetchData() {
+      const points = await servicePoints.getAll();
+      setPointsArray(points);
+      setLoading(false);
     }
+    fetchData();
+
+  }, [])
+  console.log('Points from db', pointsArray);
+
+  if(loading){
+    return(
+      <p>loading...</p>
+    )
   }
 
-  componentDidMount() {
-    const fetchData = async () => {
-      const pointsFetched = await servicePoints.getAll();
-      // this.setState({points: pointsFetched})
-      return pointsFetched;
-
-      
-      console.log(this.state.points);
-    }
-    this.setState({points: fetchData()});
-    // fetchData();
-    console.log(this.state.points)
-  }
-
-  render() { 
-    return (
-      <OuterWrapper>
-        <AppWrapper>
-          <Container>
-            <Map points={this.state.points} />
-          </Container>
-        </AppWrapper>
-      </OuterWrapper>
-    );
-  }
+  return (
+    <OuterWrapper>
+      <AppWrapper>
+        <Container>
+          <Map points={pointsArray} />
+        </Container>
+      </AppWrapper>
+    </OuterWrapper>
+  );
 }
+
+export default App;
 
