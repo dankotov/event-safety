@@ -22,15 +22,27 @@
 	font-size: calc(32px + 1vw);
 }
 
+.main-container {
+  height: auto;
+}
 .container {
   color: #ffffff;
-  background: #0F2027;
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
   text-align: left;
   display: block;
+  max-width: 750px;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 150px;
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  text-align: left;
 }
 
 .swing {
@@ -84,7 +96,7 @@
 
 div.ex1 {
   max-width: 500px;
-  margin: auto;
+  margin: 15px auto;
 }
 
 a {
@@ -96,24 +108,6 @@ a:hover {
   color: red;
   text-decoration: none;
 }
-
-
-.container {
-  padding: 15px;
-  background-color: rgba(35, 35, 35, 0.5);
-  border-radius: 10px;
-  height: auto;
-  overflow-y: scroll;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  margin: auto;
-  top: 150px;
-  bottom: 50px;
-  left: 0px;
-  right: 0px;
-  text-align: left;
-}
-
 
 img {
   width: 75%;
@@ -155,7 +149,7 @@ pre.theme-peacocks-in-space {
 }
 
 pre.theme-peacocks-in-space code {
-  font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+  /*font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;*/
 }
 
 pre.theme-peacocks-in-space .pln {
@@ -210,4 +204,28 @@ pre.theme-peacocks-in-space .fun {
 }
 
 /* ------- END OF THEME ------- */
+
+@media screen and (max-width: 1024px){
+    .container {
+        max-width: 590px;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .container {
+        max-width: 490px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .cointainer {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .container {
+        max-width: 300px;
+    }
+}
 /* YOUR CODE STARTS HERE */
