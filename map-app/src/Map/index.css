@@ -5,6 +5,10 @@ h2, p {
     font-family: 'PT Sans', sans-serif;
 }
 
+p {
+    margin-top: 10px;
+}
+
 h2 {
     display: flex;
     width: 100%;
@@ -27,6 +31,7 @@ h2:before, h2:after {
 
 .formContainer {
     display: flex;
+    margin-top: 10px;
 }
 
 .formElem {
@@ -70,7 +75,7 @@ input:focus {
     outline-color: #df2351;
 }
 
-button {
+button.submitButton {
     background: #df2351;
     background: -webkit-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
     background: -o-linear-gradient(-135deg, #d5007d, #e53935, #d5007d, #e53935);
@@ -86,13 +91,13 @@ button {
     margin: auto;
 }
 
-button:disabled {
+button:disabled.submitButton {
     filter: grayscale(80%);
     transition: 1s;
     cursor: default;
 }
 
-button:focus {
+button:focus.submitButton {
     outline-color: #df2351;
 }
 

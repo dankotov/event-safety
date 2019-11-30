@@ -115,7 +115,7 @@ const Map = ({ points }) => {
 	return (
 		<>
 			<div style={{ display: "block", width: "100%" }}>
-				<Wrapper style={{ display: "block" }} width="100%" height="450px" id="map" />
+				<Wrapper style={{ display: "block", marginBottom: "15px" }} width="100%" height="450px" id="map" />
 				<h2>See something - say something</h2>
 				{
 					latlng.length > 0 && type && description ?
@@ -139,7 +139,7 @@ const Map = ({ points }) => {
 							<input className="inText" type="text" placeholder="Short description" onChange={(e) => handleDescriptionChange(e)} />
 						</div>
 						<div className="buttonContainer formElem">
-							<button disabled={!type || latlng.length === 0 || !description} type="submit">submit</button>
+							<button className="submitButton" disabled={!type || latlng.length === 0 || !description} type="submit">submit</button>
 						</div>
 					</form>
 				</div>
